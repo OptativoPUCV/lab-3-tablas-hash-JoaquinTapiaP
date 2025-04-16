@@ -47,6 +47,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     while (current != NULL) {
         index++;
+        current = map->buckets[index];
     }
 
     current->key = key;
