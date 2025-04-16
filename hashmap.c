@@ -59,6 +59,9 @@ HashMap * createMap(long capacity) {
     nuevo->capacity = capacity;
     nuevo->current = -1;
 
+    for (long i = 0; i < capacity; i++) {
+        nuevo->buckets[i] = NULL;
+    }
 
     return nuevo;
 }
