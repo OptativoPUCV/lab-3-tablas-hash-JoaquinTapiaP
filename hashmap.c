@@ -55,13 +55,9 @@ void insertMap(HashMap * map, char * key, void * value) {
         current = createPair(strdup(key), value);
     }
     else {
-        current->key = stdrup(key);
+        current->key = strdup(key);
         current->value = value;
     }
-
-
-    current->key = key;
-    current->value = value;
 
     if ((map->capacity / map->size >= 0.7)) {
         enlarge(map);
