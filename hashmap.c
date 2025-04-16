@@ -78,16 +78,20 @@ void enlarge(HashMap * map) {
         Pair *current = map->buckets[i];
         if (current != NULL) {
     
-            long new_index = hash(current->key, newCap);
+            long index = hash(current->key, newCap);
 
-            while (newBuck[new_index] != NULL) {
-                new_index = (new_index + 1) % newCap;
+            while (newBuck[index] != NULL) {
+                index = (index + 1) % newCap;
             }
 
-            newBuck[new_index] = createPair(current->key, current->value);
+            newBuck[index] = createPair(current->key, current->value);
         }
     }
 
+    free(map->buckets);
+
+    map->buckets = newBuck;
+    map->capacity = newCap;
 
 }
 
