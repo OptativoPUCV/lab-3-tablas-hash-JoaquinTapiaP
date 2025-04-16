@@ -46,12 +46,16 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair * current = map->buckets[index];
 
     while (current != NULL) {
-        if (is_equal(current->key, key)) {
-            current->value = value;
-            return;
-        }
-        current = map->buckets[index + 1];
+        index++;
     }
+
+    current->key = key;
+    current->value = value;
+
+    if ((map->capacity / map->size >= 0.7)) {
+        enlarge(map);
+    }
+
 }
 
 void enlarge(HashMap * map) {
