@@ -59,7 +59,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         current->value = value;
     }
 
-    if (((float) map->capacity / map->size >= 0.7)) {
+    if ((float) (map->capacity / map->size >= 0.7)) {
         enlarge(map);
     }
 
