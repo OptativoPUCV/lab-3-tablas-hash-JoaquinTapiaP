@@ -38,32 +38,26 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-
 void insertMap(HashMap * map, char * key, void * value) {
-    
     if (searchMap(map, key) != NULL) return;
 
     long index = hash(key, map->capacity);
 
-    Pair * current = map->buckets[index];
-
-    while (current != NULL && current->key != NULL) {
-        current = map->buckets[index + 1];
+    // Linear probing para encontrar espacio vacío
+    while (map->buckets[index] != NULL && map->buckets[index]->key != NULL) {
+        index = (index + 1) % map->capacity;
     }
 
-    if (current == NULL) {
-        current = createPair(strdup(key), value);
-    }
-    else {
-        current->key = strdup(key);
-        current->value = value;
-    }
+    // Insertar el nuevo par
+    map->buckets[index] = createPair(strdup(key), value);
+    map->size++;
 
-    if ((map->capacity / map->size >= 0.7)) {
+    // Revisar si se necesita ampliar la tabla
+    if ((float)map->size / map->capacity >= 0.7f) {
         enlarge(map);
     }
-
 }
+
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
