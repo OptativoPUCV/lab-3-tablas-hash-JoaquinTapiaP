@@ -120,3 +120,30 @@ Fri, Apr 18, 2025 11:12:06 PM:
  1 file changed, 20 insertions(+), 14 deletions(-)
  tests:  0|0
 80c43f3
+Fri, Apr 18, 2025 11:13:16 PM: 
+ hashmap.c | 37 ++++++++++++++++---------------------
+ 1 file changed, 16 insertions(+), 21 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c:42:1: error: unknown type name 'oid'
+ oid insertMap(HashMap * map, char * key, void * value) {
+ ^~~
+hashmap.c:42:5: error: conflicting types for 'insertMap'
+ oid insertMap(HashMap * map, char * key, void * value) {
+     ^~~~~~~~~
+In file included from hashmap.c:6:0,
+                 from test.c:4:
+hashmap.h:22:6: note: previous declaration of 'insertMap' was here
+ void insertMap(HashMap * table, char * key, void * value);
+      ^~~~~~~~~
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:53:13: error: 'return' with no value, in function returning non-void [-Werror]
+             return;
+             ^~~~~~
+In file included from test.c:4:0:
+hashmap.c:42:5: note: declared here
+ oid insertMap(HashMap * map, char * key, void * value) {
+     ^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+62aab40
