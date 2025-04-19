@@ -40,21 +40,19 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-    /*
         if (map->size + 1 > map->capacity * 0.70){
-         enlarge(map);
-         //al parecer no es necesario en este caso como en la actividad en clases
-    }
-    */
-    long posicion = hash(key, map->capacity); //posicion sera el resultado de la funcion hash, lo que nos dara donde se ubica en el arreglo
-    while (map->buckets[posicion] != NULL && map->buckets[posicion]->key!= NULL){ //mientras que la casilla sea distinta de NULL o que no este vacia
-        if (is_equal(map->buckets[posicion]->key, key)) { //si ya existe la clave, no hagas nada
+            enlarge(map);
+        }
+        
+    long posicion = hash(key, map->capacity); 
+    while (map->buckets[posicion] != NULL && map->buckets[posicion]->key!= NULL){ 
+        if (is_equal(map->buckets[posicion]->key, key)) {
             map->buckets[posicion]->value = value;
             return;
         }
-        posicion = (posicion + 1) % map->capacity; //aumenta la posicion para seguir avanzando
+        posicion = (posicion + 1) % map->capacity;
     }
-    Pair * par =createPair(key, value); //se crean 
+    Pair * par =createPair(key, value); 
     map->size++;
     map->buckets[posicion] = par;
 }
