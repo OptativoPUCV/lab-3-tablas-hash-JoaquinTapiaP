@@ -61,12 +61,15 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    
     long newCap = map->capacity * 2;
     Pair **newBuck = (Pair **)malloc(sizeof(Pair *) * newCap);
     
     for (long i = 0; i < newCap ; i++) {
         newBuck[i] = NULL;
     }
+
+    map->size = 0;
 
     for (long i = 0; i < map->capacity; i++) {
         Pair *current = map->buckets[i];
@@ -79,6 +82,7 @@ void enlarge(HashMap * map) {
             }
 
             newBuck[index] = createPair(current->key, current->value);
+            map->size++;
         }
     }
 
