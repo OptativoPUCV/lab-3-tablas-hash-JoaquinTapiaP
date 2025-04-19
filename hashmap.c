@@ -143,7 +143,7 @@ Pair * firstMap(HashMap * map) {
         index++;
     }
 
-    return map->buckets[index];
+    return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
