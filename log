@@ -221,3 +221,14 @@ Sat, Apr 19, 2025 12:34:16 AM:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 4cdca2e
+Sat, Apr 19, 2025 12:37:59 AM: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:127:26: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+             map->current = map->buckets[index];
+                          ^
+cc1.exe: all warnings being treated as errors
+c5ac061
