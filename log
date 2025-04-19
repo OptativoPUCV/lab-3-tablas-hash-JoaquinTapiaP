@@ -367,3 +367,95 @@ Sat, Apr 19, 2025 10:45:55 AM:
  tests:  17|0
 total_score: 70/70
 d999ca7
+Sat, Apr 19, 2025 10:47:04 AM: 
+ hashmap.c | Unmerged
+ hashmap.c | 162 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 162 insertions(+)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c:1:1: error: version control conflict marker in file
+ <<<<<<< HEAD
+ ^~~~~~~
+In file included from test.c:4:0:
+hashmap.c:165:1: error: version control conflict marker in file
+ =======
+ ^~~~~~~
+hashmap.c:175:5: error: redefinition of 'enlarge_called'
+ int enlarge_called=0;
+     ^~~~~~~~~~~~~~
+hashmap.c:11:5: note: previous definition of 'enlarge_called' was here
+ int enlarge_called=0;
+     ^~~~~~~~~~~~~~
+hashmap.c:177:8: error: redefinition of 'struct HashMap'
+ struct HashMap {
+        ^~~~~~~
+In file included from hashmap.c:7:0,
+                 from test.c:4:
+hashmap.h:13:16: note: originally defined here
+ typedef struct HashMap HashMap;
+                ^~~~~~~
+In file included from test.c:4:0:
+hashmap.c:184:8: error: redefinition of 'createPair'
+ Pair * createPair(char * key,  void * value) {
+        ^~~~~~~~~~
+hashmap.c:20:8: note: previous definition of 'createPair' was here
+ Pair * createPair(char * key,  void * value) {
+        ^~~~~~~~~~
+hashmap.c:191:6: error: redefinition of 'hash'
+ long hash(char * key, long capacity) {
+      ^~~~
+hashmap.c:27:6: note: previous definition of 'hash' was here
+ long hash(char * key, long capacity) {
+      ^~~~
+hashmap.c:200:5: error: redefinition of 'is_equal'
+ int is_equal(void* key1, void* key2){
+     ^~~~~~~~
+hashmap.c:36:5: note: previous definition of 'is_equal' was here
+ int is_equal(void* key1, void* key2){
+     ^~~~~~~~
+hashmap.c:207:6: error: redefinition of 'insertMap'
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+hashmap.c:43:6: note: previous definition of 'insertMap' was here
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+hashmap.c:227:6: error: redefinition of 'enlarge'
+ void enlarge(HashMap * map) {
+      ^~~~~~~
+hashmap.c:63:6: note: previous definition of 'enlarge' was here
+ void enlarge(HashMap * map) {
+      ^~~~~~~
+hashmap.c:258:11: error: redefinition of 'createMap'
+ HashMap * createMap(long capacity) {
+           ^~~~~~~~~
+hashmap.c:98:11: note: previous definition of 'createMap' was here
+ HashMap * createMap(long capacity) {
+           ^~~~~~~~~
+hashmap.c:273:6: error: redefinition of 'eraseMap'
+ void eraseMap(HashMap * map,  char * key) {
+      ^~~~~~~~
+hashmap.c:113:6: note: previous definition of 'eraseMap' was here
+ void eraseMap(HashMap * map,  char * key) {
+      ^~~~~~~~
+hashmap.c:287:8: error: redefinition of 'searchMap'
+ Pair * searchMap(HashMap * map,  char * key) {
+        ^~~~~~~~~
+hashmap.c:127:8: note: previous definition of 'searchMap' was here
+ Pair * searchMap(HashMap * map,  char * key) {
+        ^~~~~~~~~
+hashmap.c:300:8: error: redefinition of 'firstMap'
+ Pair * firstMap(HashMap * map) {
+        ^~~~~~~~
+hashmap.c:140:8: note: previous definition of 'firstMap' was here
+ Pair * firstMap(HashMap * map) {
+        ^~~~~~~~
+hashmap.c:313:8: error: redefinition of 'nextMap'
+ Pair * nextMap(HashMap * map) {
+        ^~~~~~~
+hashmap.c:153:8: note: previous definition of 'nextMap' was here
+ Pair * nextMap(HashMap * map) {
+        ^~~~~~~
+hashmap.c:325:1: error: version control conflict marker in file
+ >>>>>>> d4aa20dfc771b4b93b8c29fd2054ef8d2bd1b073
+ ^~~~~~~
+3fbfd32
