@@ -39,7 +39,7 @@ int is_equal(void* key1, void* key2){
 }
 
 
-oid insertMap(HashMap * map, char * key, void * value) {
+void insertMap(HashMap * map, char * key, void * value) {
     /*
         if (map->size + 1 > map->capacity * 0.70){
          enlarge(map);
