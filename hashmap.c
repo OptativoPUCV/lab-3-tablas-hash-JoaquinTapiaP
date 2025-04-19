@@ -136,7 +136,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     long index = 0;
     while (map->buckets[index] != NULL) {
-        if (map->buckets[index]->key != NULL && is_equal(map->buckets[index]->key, key)) {
+        if (map->buckets[index]->key != NULL) {
             map->current = index;
             return map->buckets[index];
         }
