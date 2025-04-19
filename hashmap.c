@@ -107,11 +107,6 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
-
-}
-
-Pair * searchMap(HashMap * map,  char * key) {   
     long index = hash(key, map->capacity);
     while (map->buckets[index]->key != key) {
         if (is_equal(map->buckets[index]->key, key)){
@@ -121,6 +116,11 @@ Pair * searchMap(HashMap * map,  char * key) {
         }
         index++;
     }
+
+}
+
+Pair * searchMap(HashMap * map,  char * key) {   
+
 
     return NULL;
 }
