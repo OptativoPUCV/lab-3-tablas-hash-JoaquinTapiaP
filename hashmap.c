@@ -124,7 +124,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     long index = hash(key, map->capacity);
     while (map->buckets[index] != NULL) {
         if (map->buckets[index]->key != NULL && is_equal(map->buckets[index]->key, key)) {
-            map.current = map->buckets[index];
+            map->current = map->buckets[index];
             return map->buckets[index];
         }
         index = (index + 1) % map->capacity;
