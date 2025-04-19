@@ -299,3 +299,14 @@ Sat, Apr 19, 2025 12:50:04 AM:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8b59b7e
+Sat, Apr 19, 2025 12:54:09 AM: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'firstMap':
+hashmap.c:139:84: error: 'key' undeclared (first use in this function)
+         if (map->buckets[index]->key != NULL && is_equal(map->buckets[index]->key, key)) {
+                                                                                    ^~~
+hashmap.c:139:84: note: each undeclared identifier is reported only once for each function it appears in
+a4b6139

@@ -134,8 +134,16 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
+    long index = 0;
+    while (map->buckets[index] != NULL) {
+        if (map->buckets[index]->key != NULL && is_equal(map->buckets[index]->key, key)) {
+            map->current = index;
+            return map->buckets[index];
+        }
+        index++;
+    }
 
-    return NULL;
+    return map->buckets[1];
 }
 
 Pair * nextMap(HashMap * map) {
